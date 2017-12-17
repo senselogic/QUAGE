@@ -1,0 +1,85 @@
+identity_quaternion.X = 0.0;
+identity_quaternion.Y = 0.0;
+identity_quaternion.Z = 0.0;
+identity_quaternion.W = 1.0;
+
+product_quaternion.X = first_quaternion.W * second_quaternion.X + first_quaternion.X * second_quaternion.W + first_quaternion.Y * second_quaternion.Z - first_quaternion.Z * second_quaternion.Y;
+product_quaternion.Y = first_quaternion.W * second_quaternion.Y - first_quaternion.X * second_quaternion.Z + first_quaternion.Y * second_quaternion.W + first_quaternion.Z * second_quaternion.X;
+product_quaternion.Z = first_quaternion.W * second_quaternion.Z + first_quaternion.X * second_quaternion.Y - first_quaternion.Y * second_quaternion.X + first_quaternion.Z * second_quaternion.W;
+product_quaternion.W = first_quaternion.W * second_quaternion.W - first_quaternion.X * second_quaternion.X - first_quaternion.Y * second_quaternion.Y - first_quaternion.Z * second_quaternion.Z;
+
+x_rotation_quaternion.X = half_x_sinus;
+x_rotation_quaternion.Y = 0.0;
+x_rotation_quaternion.Z = 0.0;
+x_rotation_quaternion.W = half_x_cosinus;
+
+y_rotation_quaternion.X = 0.0;
+y_rotation_quaternion.Y = half_y_sinus;
+y_rotation_quaternion.Z = 0.0;
+y_rotation_quaternion.W = half_y_cosinus;
+
+z_rotation_quaternion.X = 0.0;
+z_rotation_quaternion.Y = 0.0;
+z_rotation_quaternion.Z = half_z_sinus;
+z_rotation_quaternion.W = half_z_cosinus;
+
+xy_z_rotation_quaternion.X = half_x_sinus * half_y_cosinus * half_z_cosinus + half_x_cosinus * half_y_sinus * half_z_sinus;
+xy_z_rotation_quaternion.Y = -half_x_sinus * half_y_cosinus * half_z_sinus + half_x_cosinus * half_y_sinus * half_z_cosinus;
+xy_z_rotation_quaternion.Z = half_x_cosinus * half_y_cosinus * half_z_sinus + half_x_sinus * half_y_sinus * half_z_cosinus;
+xy_z_rotation_quaternion.W = half_x_cosinus * half_y_cosinus * half_z_cosinus - half_x_sinus * half_y_sinus * half_z_sinus;
+
+x_yz_rotation_quaternion.X = half_x_cosinus * half_y_sinus * half_z_sinus + half_x_sinus * half_y_cosinus * half_z_cosinus;
+x_yz_rotation_quaternion.Y = half_x_cosinus * half_y_sinus * half_z_cosinus - half_x_sinus * half_y_cosinus * half_z_sinus;
+x_yz_rotation_quaternion.Z = half_x_cosinus * half_y_cosinus * half_z_sinus + half_x_sinus * half_y_sinus * half_z_cosinus;
+x_yz_rotation_quaternion.W = half_x_cosinus * half_y_cosinus * half_z_cosinus - half_x_sinus * half_y_sinus * half_z_sinus;
+
+xz_y_rotation_quaternion.X = half_x_sinus * half_z_cosinus * half_y_cosinus - half_x_cosinus * half_z_sinus * half_y_sinus;
+xz_y_rotation_quaternion.Y = half_x_cosinus * half_z_cosinus * half_y_sinus - half_x_sinus * half_z_sinus * half_y_cosinus;
+xz_y_rotation_quaternion.Z = half_x_sinus * half_z_cosinus * half_y_sinus + half_x_cosinus * half_z_sinus * half_y_cosinus;
+xz_y_rotation_quaternion.W = half_x_cosinus * half_z_cosinus * half_y_cosinus + half_x_sinus * half_z_sinus * half_y_sinus;
+
+x_zy_rotation_quaternion.X = -half_x_cosinus * half_z_sinus * half_y_sinus + half_x_sinus * half_z_cosinus * half_y_cosinus;
+x_zy_rotation_quaternion.Y = half_x_cosinus * half_z_cosinus * half_y_sinus - half_x_sinus * half_z_sinus * half_y_cosinus;
+x_zy_rotation_quaternion.Z = half_x_cosinus * half_z_sinus * half_y_cosinus + half_x_sinus * half_z_cosinus * half_y_sinus;
+x_zy_rotation_quaternion.W = half_x_cosinus * half_z_cosinus * half_y_cosinus + half_x_sinus * half_z_sinus * half_y_sinus;
+
+yx_z_rotation_quaternion.X = half_y_cosinus * half_x_sinus * half_z_cosinus + half_y_sinus * half_x_cosinus * half_z_sinus;
+yx_z_rotation_quaternion.Y = -half_y_cosinus * half_x_sinus * half_z_sinus + half_y_sinus * half_x_cosinus * half_z_cosinus;
+yx_z_rotation_quaternion.Z = half_y_cosinus * half_x_cosinus * half_z_sinus - half_y_sinus * half_x_sinus * half_z_cosinus;
+yx_z_rotation_quaternion.W = half_y_cosinus * half_x_cosinus * half_z_cosinus + half_y_sinus * half_x_sinus * half_z_sinus;
+
+y_xz_rotation_quaternion.X = half_y_cosinus * half_x_sinus * half_z_cosinus + half_y_sinus * half_x_cosinus * half_z_sinus;
+y_xz_rotation_quaternion.Y = -half_y_cosinus * half_x_sinus * half_z_sinus + half_y_sinus * half_x_cosinus * half_z_cosinus;
+y_xz_rotation_quaternion.Z = half_y_cosinus * half_x_cosinus * half_z_sinus - half_y_sinus * half_x_sinus * half_z_cosinus;
+y_xz_rotation_quaternion.W = half_y_cosinus * half_x_cosinus * half_z_cosinus + half_y_sinus * half_x_sinus * half_z_sinus;
+
+yz_x_rotation_quaternion.X = half_y_cosinus * half_z_cosinus * half_x_sinus + half_y_sinus * half_z_sinus * half_x_cosinus;
+yz_x_rotation_quaternion.Y = half_y_sinus * half_z_cosinus * half_x_cosinus + half_y_cosinus * half_z_sinus * half_x_sinus;
+yz_x_rotation_quaternion.Z = -half_y_sinus * half_z_cosinus * half_x_sinus + half_y_cosinus * half_z_sinus * half_x_cosinus;
+yz_x_rotation_quaternion.W = half_y_cosinus * half_z_cosinus * half_x_cosinus - half_y_sinus * half_z_sinus * half_x_sinus;
+
+y_zx_rotation_quaternion.X = half_y_cosinus * half_z_cosinus * half_x_sinus + half_y_sinus * half_z_sinus * half_x_cosinus;
+y_zx_rotation_quaternion.Y = half_y_cosinus * half_z_sinus * half_x_sinus + half_y_sinus * half_z_cosinus * half_x_cosinus;
+y_zx_rotation_quaternion.Z = half_y_cosinus * half_z_sinus * half_x_cosinus - half_y_sinus * half_z_cosinus * half_x_sinus;
+y_zx_rotation_quaternion.W = half_y_cosinus * half_z_cosinus * half_x_cosinus - half_y_sinus * half_z_sinus * half_x_sinus;
+
+zx_y_rotation_quaternion.X = half_z_cosinus * half_x_sinus * half_y_cosinus - half_z_sinus * half_x_cosinus * half_y_sinus;
+zx_y_rotation_quaternion.Y = half_z_cosinus * half_x_cosinus * half_y_sinus + half_z_sinus * half_x_sinus * half_y_cosinus;
+zx_y_rotation_quaternion.Z = half_z_cosinus * half_x_sinus * half_y_sinus + half_z_sinus * half_x_cosinus * half_y_cosinus;
+zx_y_rotation_quaternion.W = half_z_cosinus * half_x_cosinus * half_y_cosinus - half_z_sinus * half_x_sinus * half_y_sinus;
+
+z_xy_rotation_quaternion.X = half_z_cosinus * half_x_sinus * half_y_cosinus - half_z_sinus * half_x_cosinus * half_y_sinus;
+z_xy_rotation_quaternion.Y = half_z_cosinus * half_x_cosinus * half_y_sinus + half_z_sinus * half_x_sinus * half_y_cosinus;
+z_xy_rotation_quaternion.Z = half_z_cosinus * half_x_sinus * half_y_sinus + half_z_sinus * half_x_cosinus * half_y_cosinus;
+z_xy_rotation_quaternion.W = half_z_cosinus * half_x_cosinus * half_y_cosinus - half_z_sinus * half_x_sinus * half_y_sinus;
+
+zy_x_rotation_quaternion.X = half_z_cosinus * half_y_cosinus * half_x_sinus - half_z_sinus * half_y_sinus * half_x_cosinus;
+zy_x_rotation_quaternion.Y = half_z_cosinus * half_y_sinus * half_x_cosinus + half_z_sinus * half_y_cosinus * half_x_sinus;
+zy_x_rotation_quaternion.Z = -half_z_cosinus * half_y_sinus * half_x_sinus + half_z_sinus * half_y_cosinus * half_x_cosinus;
+zy_x_rotation_quaternion.W = half_z_cosinus * half_y_cosinus * half_x_cosinus + half_z_sinus * half_y_sinus * half_x_sinus;
+
+z_yx_rotation_quaternion.X = half_z_cosinus * half_y_cosinus * half_x_sinus - half_z_sinus * half_y_sinus * half_x_cosinus;
+z_yx_rotation_quaternion.Y = half_z_cosinus * half_y_sinus * half_x_cosinus + half_z_sinus * half_y_cosinus * half_x_sinus;
+z_yx_rotation_quaternion.Z = -half_z_cosinus * half_y_sinus * half_x_sinus + half_z_sinus * half_y_cosinus * half_x_cosinus;
+z_yx_rotation_quaternion.W = half_z_cosinus * half_y_cosinus * half_x_cosinus + half_z_sinus * half_y_sinus * half_x_sinus;
+
