@@ -1,6 +1,6 @@
 ![](https://github.com/senselogic/QUAGE/blob/master/LOGO/quage.png)
 
-# Mage
+# Quage
 
 Quaternion code generator.
 
