@@ -378,7 +378,7 @@ void main(
     if ( argument_array.length >= 2 )
     {
         quaternion_name = argument_array[ 0 ];
-        quaternion_array.length = argument_array.length - 1;
+        quaternion_array.length = argument_array.length.to!long() - 1;
 
         foreach ( argument_index; 1 .. argument_array.length )
         {
@@ -424,9 +424,9 @@ void main(
         }
         else
         {
-            product_quaternion = quaternion_array[ quaternion_array.length - 1 ];
+            product_quaternion = quaternion_array[ quaternion_array.length.to!long() - 1 ];
 
-            for ( quaternion_index = quaternion_array.length - 2;
+            for ( quaternion_index = quaternion_array.length.to!long() - 2;
                   quaternion_index >= 0;
                   --quaternion_index )
             {
@@ -448,28 +448,3 @@ void main(
         writeln( "Invalid arguments : " ~ argument_array.to!string() );
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
