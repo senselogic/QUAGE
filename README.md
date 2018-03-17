@@ -54,7 +54,7 @@ quage [options] first_quaternion second_quaternion ...
 
 ### Options
 
-```bash
+```
 --reverse : compute the quaternion product in reverse order
 ```
 
