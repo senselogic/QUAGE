@@ -251,7 +251,7 @@ struct QUATERNION
     bool FindMatch(
         string text,
         Regex!char expression,
-        ref Captures!( string, ulong ) match
+        ref Captures!( string ) match
         )
     {
         match = text.matchFirst( expression );
@@ -267,7 +267,7 @@ struct QUATERNION
     {
         string
             old_expression;
-        Captures!( string, ulong )
+        Captures!( string )
             match;
         Regex!char
             negative_addition_expression,
