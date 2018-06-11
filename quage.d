@@ -18,16 +18,12 @@
     along with Mage.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// == LOCAL
-
 // -- IMPORTS
 
 import std.conv : to;
 import std.regex : matchFirst, regex, Captures, Regex;
 import std.stdio : writeln;
 import std.string : indexOf, split, startsWith, strip;
-
-// == GLOBAL
 
 // -- TYPES
 
@@ -149,20 +145,20 @@ struct QUATERNION
             first_component,
             second_component,
             term_component;
-        
+
         // X = first_quaternion.W * second_quaternion.X + first_quaternion.X * second_quaternion.W + first_quaternion.Y * second_quaternion.Z - first_quaternion.Z * second_quaternion.Y;
         // Y = first_quaternion.W * second_quaternion.Y - first_quaternion.X * second_quaternion.Z + first_quaternion.Y * second_quaternion.W + first_quaternion.Z * second_quaternion.X;
         // Z = first_quaternion.W * second_quaternion.Z + first_quaternion.X * second_quaternion.Y - first_quaternion.Y * second_quaternion.X + first_quaternion.Z * second_quaternion.W;
         // W = first_quaternion.W * second_quaternion.W - first_quaternion.X * second_quaternion.X - first_quaternion.Y * second_quaternion.Y - first_quaternion.Z * second_quaternion.Z;
 
-        second_component_index_array 
-            = [ 
+        second_component_index_array
+            = [
                 0, 3, 2, 1,
                 1, 2, 3, 0,
                 2, 1, 0, 3,
                 3, 0, 1, 2
               ];
-              
+
         sign_array
             = [
                 1, 1, 1, -1,
@@ -245,9 +241,9 @@ struct QUATERNION
             ComponentArray[ component_index ] = component;
         }
     }
-    
+
     // ~~
-    
+
     bool FindMatch(
         string text,
         Regex!char expression,
@@ -258,9 +254,9 @@ struct QUATERNION
 
         return !match.empty();
     }
-    
+
     // ~~
-    
+
     string GetFixedExpression(
         string expression
         )
@@ -279,11 +275,11 @@ struct QUATERNION
         positive_substraction_expression = regex( `(.+)\- -([A-Za-z0-9_\.]+.*)` );
         negative_product_expression = regex( `(.+) ([A-Za-z0-9_\.]+) \* -([A-Za-z0-9_\.]+.*)` );
         positive_product_expression = regex( `(.+) -([A-Za-z0-9_\.]+) \* -([A-Za-z0-9_\.]+.*)` );
-        
+
         do
         {
             old_expression = expression;
-            
+
             if ( FindMatch( expression, negative_addition_expression, match ) )
             {
                 expression = match[ 1 ] ~ "- " ~ match[ 2 ];
@@ -302,7 +298,7 @@ struct QUATERNION
             }
         }
         while ( expression != old_expression );
-        
+
         return expression;
     }
 
@@ -314,7 +310,7 @@ struct QUATERNION
     {
         string
             expression;
-            
+
         foreach ( component_index; 0 .. ComponentCount )
         {
             expression
@@ -324,7 +320,7 @@ struct QUATERNION
                 ~ " = "
                 ~ ComponentArray[ component_index ]
                 ~ ";";
-            
+
             writeln( GetFixedExpression( expression ) );
         }
 
@@ -333,7 +329,7 @@ struct QUATERNION
 };
 
 // -- FUNCTIONS
-    
+
 void main(
     string[] argument_array
     )
@@ -444,7 +440,7 @@ void main(
         writeln( "Usage : quage [options] first_quaternion second_quaternion ..." );
         writeln( "Options :" );
         writeln( "    --reverse" );
-        
+
         writeln( "Invalid arguments : ", argument_array );
     }
 }
