@@ -38,7 +38,7 @@ x_yz_rotation_quaternion.W = half_x_cosinus * half_y_cosinus * half_z_cosinus - 
 
 ## Installation
 
-Install the [DMD 2 compiler](https://dlang.org/download.html) (choosing the MinGW setup option on Windows).
+Install the [DMD 2 compiler](https://dlang.org/download.html) ((using the MinGW setup option on Windows)).
 
 Build the executable with the following command line :
 
