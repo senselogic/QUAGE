@@ -38,7 +38,7 @@ x_yz_rotation_quaternion.W = half_x_cosinus * half_y_cosinus * half_z_cosinus - 
 
 ## Installation
 
-Install the [DMD 2 compiler](https://dlang.org/download.html).
+Install the [DMD 2 compiler](https://dlang.org/download.html) (choosing the MinGW setup option on Windows).
 
 Build the executable with the following command line :
 
@@ -64,7 +64,7 @@ quage [options] first_quaternion second_quaternion ...
 * x_rotation_quaternion
 * y_rotation_quaternion
 * z_rotation_quaternion
-          
+
 ## Named quaternions
 
 * quaternion_name
